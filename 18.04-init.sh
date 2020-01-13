@@ -3,7 +3,9 @@ cp /etc/apt/sources.list /etc/apt/sources.list.bak
 sed -i 's/http:\/\/archive.ubuntu.com\/ubuntu/http:\/\/mirrors.163.com\/ubuntu/g' /etc/apt/sources.list
 sed -i 's/http:\/\/security.ubuntu.com\/ubuntu/http:\/\/mirrors.163.com\/ubuntu/g' /etc/apt/sources.list
 
-
+sudo apt install zsh
+sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+chsh -s $(which zsh)
 sudo apt update && apt -y upgrade && apt install -y php-curl php-fpm php-mbstring php-mysql php-xml php-zip php-gd php-dev php-pear php-bcmath composer nginx redis mysql-server libpng-dev
 sudo apt-get install \
       apt-transport-https \
